@@ -4,7 +4,7 @@ sys.path.append("/home/jacklin/EMF/emf")
 from emf import Phase2D, EMFAnalysis2D
 
  # name, x, y, wire diameter, voltage, current, phase angle, # wires, spacing
-# --- Assumptions you can tweak ---
+
 V_PHASE = 76.2e3         # 76.2 kV phase-to-ground (from 132 kV L-L / sqrt(3))
 I_PHASE = 320            # A 
 H = 9.03                     # m height above ground
