@@ -7,7 +7,7 @@ from emf import Phase2D, EMFAnalysis2D
 
 V_PHASE = 76.2e3         # 76.2 kV phase-to-ground (from 132 kV L-L / sqrt(3))
 I_PHASE = 320            # A 
-H = 9.03                     # m height above ground
+H = 7.5                     # m height above ground
 R_CONDUCTOR = 0.01575      # m (~31.5 mm diameter)
 BUNDLE_COUNT = 2         # 2
 BUNDLE_SPACING = 0.380     # 380mm separation
@@ -15,14 +15,14 @@ BUNDLE_SPACING = 0.380     # 380mm separation
 phases = [
     # name, x, y, wire diameter, voltage, current, phase angle, # wires, spacing
     # Circuit 1 (left)
-    Phase2D("R1", -2.15, 24.40, R_CONDUCTOR, V_PHASE, I_PHASE,   0, BUNDLE_COUNT, BUNDLE_SPACING),
-    Phase2D("W1",  -2.15, 21.44, R_CONDUCTOR, V_PHASE, I_PHASE, 120, BUNDLE_COUNT, BUNDLE_SPACING),
-    Phase2D("B1",  -2.15, 18.48, R_CONDUCTOR, V_PHASE, I_PHASE, 240, BUNDLE_COUNT, BUNDLE_SPACING),
+    Phase2D("R1", -9.907, H, R_CONDUCTOR, V_PHASE, I_PHASE,   0, BUNDLE_COUNT, BUNDLE_SPACING),
+    Phase2D("W1",  -6.093, H, R_CONDUCTOR, V_PHASE, I_PHASE, 120, BUNDLE_COUNT, BUNDLE_SPACING),
+    Phase2D("B1",  -1.907, H, R_CONDUCTOR, V_PHASE, I_PHASE, 240, BUNDLE_COUNT, BUNDLE_SPACING),
 
     # Circuit 2 (right)
-    Phase2D("R2",   2.15, 18.48, R_CONDUCTOR, V_PHASE, I_PHASE,   0, BUNDLE_COUNT, BUNDLE_SPACING),
-    Phase2D("W2",   2.15, 21.44, R_CONDUCTOR, V_PHASE, I_PHASE, 120, BUNDLE_COUNT, BUNDLE_SPACING),
-    Phase2D("B2",  2.15,  24.40, R_CONDUCTOR, V_PHASE, I_PHASE, 240, BUNDLE_COUNT, BUNDLE_SPACING),
+    Phase2D("R2",   1.907, H, R_CONDUCTOR, V_PHASE, I_PHASE,   0, BUNDLE_COUNT, BUNDLE_SPACING),
+    Phase2D("W2",   6.093, H, R_CONDUCTOR, V_PHASE, I_PHASE, 120, BUNDLE_COUNT, BUNDLE_SPACING),
+    Phase2D("B2",  9.907,  H, R_CONDUCTOR, V_PHASE, I_PHASE, 240, BUNDLE_COUNT, BUNDLE_SPACING),
 ]
 emf = EMFAnalysis2D(phases)
 
